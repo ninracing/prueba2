@@ -24,12 +24,13 @@ function permitirEnvio(){
 
 // funcion que comprueba todos los parametros introducidos por el usuario, llamando a distintas funciones
 function validar(){
-	comprobarCorreo();
-	comprobarAlias();
-	comprobarContrasena();
-	comprobarCopia();
-	comprobarSeleccion();
-	comprobarRespuesta();	
+	// comprobarCorreo();
+	// comprobarAlias();
+	// comprobarContrasena();
+	// comprobarCopia();
+	// comprobarSeleccion();
+	// comprobarRespuesta();
+	cantidadSuplementos();	
 };
 
 // funcion que pone en naranja el campo para mostrar al usuario que lo introducido no es valido.
@@ -149,6 +150,7 @@ function comprobarSeleccion(){
 	}
 };
 
+// funcion que verifica que se hayan introducido 8 caracteres o mas en el campo respuest
 function comprobarRespuesta(){
 	var id = "respuesta";
 	var idError= "error-respuesta"
@@ -162,6 +164,46 @@ function comprobarRespuesta(){
 		mostrarError(id,idError,error);
   		return false;	
 	}
+};
+
+// funcion que calcula la cantidad de suplementos seleccionados y que muestra error si no se selecciona ninguno
+function cantidadSuplementos(){
+	var total = 0;
+	console.log(total);
+	if(document.getElementById("actualidad").checked){
+		total=total +1;
+	};
+	if(document.getElementById("economia").checked){
+		total=total +1;
+	};
+	if(document.getElementById("internacional").checked){
+		total=total +1;
+	};
+	if(document.getElementById("deportes").checked){
+		total=total +1;
+	};
+	if(document.getElementById("cultura").checked){
+		total=total +1;
+	};
+	if(document.getElementById("tecnologia").checked){
+		total=total +1;
+	};
+	if(document.getElementById("salud").checked){
+		total=total +1;
+	};
+	if(document.getElementById("opinion").checked){
+		total=total +1;
+	};
+	console.log(total);
+	//si el usuario no marca ninguna dolencia le maracaremos automaticamente: otras dolencias
+	if(total==0){
+		var id = "cajaSuplementos";
+		var idError = "error-suplemento";
+		var error ="Debe seleccionar al menos un suplemento";
+		mostrarError(id,idError,error);
+  		return false;	
+	}
+
 };
 
 

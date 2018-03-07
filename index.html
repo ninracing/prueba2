@@ -26,7 +26,7 @@
 				<p id="error-nombreUsuario" class="error"></p>
 				
 				<p><label for="correo">E-mail:</label></p>
-				<p><input type="email" name="correo" id="correo" size="50" required></p>
+				<p><input type="email" name="correo" id="correo" size="50" ></p>
 				<p id="error-correo" class="error"></p>
 				
 				<p><label for="alias">Alias*:</label></p>
@@ -70,21 +70,25 @@
 				<p>Seleccione los suplementos que le interesan:</p>
 				<p>Debe seleccionar al menos uno, precio de cada suplemento 5€</p>
 
-				<p><label for="actualidad">Actualidad</label><input type="checkbox" name="suplemento" id="actualidad" value="actualidad"/></p>
-				
-				<p><label for="economia">Economía</label><input type="checkbox" name="suplemento" id="economia" value="economia"/></p>
-				
-				<p><label for="internacional">Internacional</label><input type="checkbox" name="suplemento" id="internacional" value="internacional"/></p>
-				
-				<p><label for="deportes">Deportes</label><input type="checkbox" name="suplemento" id="deportes" value="deportes"/></p>
+				<div id="cajaSuplementos">
+					
+					<p><label for="actualidad">Actualidad</label><input type="checkbox" name="suplemento" id="actualidad" value="actualidad"/></p>
+					
+					<p><label for="economia">Economía</label><input type="checkbox" name="suplemento" id="economia" value="economia"/></p>
+					
+					<p><label for="internacional">Internacional</label><input type="checkbox" name="suplemento" id="internacional" value="internacional"/></p>
+					
+					<p><label for="deportes">Deportes</label><input type="checkbox" name="suplemento" id="deportes" value="deportes"/></p>
 
-				<p><label for="cultura">Cultura</label><input type="checkbox" name="suplemento" id="cultura" value="cultura"/></p>
-				
-				<p><label for="tecnologia">Tecnología</label><input type="checkbox" name="suplemento" id="tecnologia" value="tecnologia"/></p>
+					<p><label for="cultura">Cultura</label><input type="checkbox" name="suplemento" id="cultura" value="cultura"/></p>
+					
+					<p><label for="tecnologia">Tecnología</label><input type="checkbox" name="suplemento" id="tecnologia" value="tecnologia"/></p>
 
-				<p><label for="salud">Salud</label><input type="checkbox" name="suplemento" id="salud" value="salud"/></p>
+					<p><label for="salud">Salud</label><input type="checkbox" name="suplemento" id="salud" value="salud"/></p>
 
-				<p><label for="opinion">Opinión</label><input type="checkbox" name="suplemento" id="opinion" value="opinion"/></p>
+					<p><label for="opinion">Opinión</label><input type="checkbox" name="suplemento" id="opinion" value="opinion"/></p>
+
+				</div>
 
 				<p id="error-suplemento" class="error"></p>
 
