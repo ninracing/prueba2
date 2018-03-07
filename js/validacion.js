@@ -169,7 +169,7 @@ function comprobarRespuesta(){
 // funcion que calcula la cantidad de suplementos seleccionados y que muestra error si no se selecciona ninguno
 function cantidadSuplementos(){
 	var total = 0;
-	console.log(total);
+	
 	if(document.getElementById("actualidad").checked){
 		total=total +1;
 	};
@@ -194,7 +194,7 @@ function cantidadSuplementos(){
 	if(document.getElementById("opinion").checked){
 		total=total +1;
 	};
-	console.log(total);
+
 	//si el usuario no marca ninguna dolencia le maracaremos automaticamente: otras dolencias
 	if(total==0){
 		var id = "cajaSuplementos";
@@ -204,7 +204,21 @@ function cantidadSuplementos(){
   		return false;	
 	}
 
+	// le imprimimos el coste al usuario y quitamos errores
+	var id = "cajaSuplementos";
+	var idError = "error-suplemento";
+	mostrarValido(id,idError);
+	calculocoste(total);
+
 };
+
+// funcion que calcula el coste de los suplementos seleccionados y lo imprime en pantalla
+function calculocoste(total){
+	var coste = 0;
+	coste = total *5;
+	console.log(coste);
+	document.getElementById("coste").value=coste;
+}
 
 
 
