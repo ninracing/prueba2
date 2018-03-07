@@ -32,7 +32,9 @@ function validar(){
 	comprobarContrasena();
 	comprobarCopia();
 	comprobarSeleccion();
-	comprobarRespuesta();	
+	comprobarRespuesta();
+	cantidadSuplementos();	
+	verificarTarjeta();
 };
 
 // funcion que pone en naranja el campo para mostrar al usuario que lo introducido no es valido.
@@ -205,6 +207,7 @@ function comprobarSeleccion(){
 	}
 };
 
+// funcion que verifica que se hayan introducido 8 caracteres o mas en el campo respuest
 function comprobarRespuesta(){
 	var id = "respuesta";
 	var idError= "error-respuesta"
@@ -219,6 +222,104 @@ function comprobarRespuesta(){
   		return false;	
 	}
 };
+
+// funcion que calcula la cantidad de suplementos seleccionados y que muestra error si no se selecciona ninguno
+function cantidadSuplementos(){
+	var total = 0;
+	
+	if(document.getElementById("actualidad").checked){
+		total=total +1;
+	};
+	if(document.getElementById("economia").checked){
+		total=total +1;
+	};
+	if(document.getElementById("internacional").checked){
+		total=total +1;
+	};
+	if(document.getElementById("deportes").checked){
+		total=total +1;
+	};
+	if(document.getElementById("cultura").checked){
+		total=total +1;
+	};
+	if(document.getElementById("tecnologia").checked){
+		total=total +1;
+	};
+	if(document.getElementById("salud").checked){
+		total=total +1;
+	};
+	if(document.getElementById("opinion").checked){
+		total=total +1;
+	};
+
+	//si el usuario no marca ninguna dolencia le maracaremos automaticamente: otras dolencias
+	if(total==0){
+		var id = "cajaSuplementos";
+		var idError = "error-suplemento";
+		var error ="Debe seleccionar al menos un suplemento";
+		mostrarError(id,idError,error);
+  		return false;	
+	}
+
+	// le imprimimos el coste al usuario y quitamos errores
+	var id = "cajaSuplementos";
+	var idError = "error-suplemento";
+	mostrarValido(id,idError);
+	calculocoste(total);
+
+};
+
+// funcion que calcula el coste de los suplementos seleccionados y lo imprime en pantalla
+function calculocoste(total){
+	var coste = 0;
+	coste = total *5;
+	document.getElementById("coste").value=coste;
+};
+
+// funcion que comprueba el numero de tarjeta
+function verificarTarjeta(){
+	var id1 = "campoTarjeta1";
+	var idError1 = "error-campoTarjeta1";
+	var id2 = "campoTarjeta2";
+	var idError2 = "error-campoTarjeta2";
+	var id3 = "campoTarjeta3";
+	var idError3 = "error-campoTarjeta3";
+	var id4 = "campoTarjeta4";
+	var idError4 = "error-campoTarjeta4";
+	verificarCampoTarjeta(id1,idError1);
+	verificarCampoTarjeta(id2,idError2);
+	verificarCampoTarjeta(id3,idError3);
+	verificarCampoTarjeta(id4,idError4);
+}
+
+// funcion que comprueba cada campo de la tarjeta de forma individual
+function verificarCampoTarjeta(idCampo,idErrorCampo){
+	var id = idCampo;
+	var idError = idErrorCampo;
+	var error1 = "Error: numero de caracteres incorrecto en el "+id+" , introduzca 4.";
+	var error2 = "Error: no ha introducido numeros en el "+id+".";
+	var comprobar =document.getElementById(id).value;
+	var tamano = comprobar.length;
+	var numeros="0123456789";
+	
+	if(tamano == 4){
+		for (var i = tamano - 1; i >= 0; i--) {
+			if ((numeros.indexOf(comprobar.substr(i,1)))<0){
+				mostrarError(id,idError,error2);
+				return false;
+			}
+			else{
+				mostrarValido(id,idError);
+			}
+		}		
+	}
+	else{
+		mostrarError(id,idError,error1);
+		return false;
+	}
+};	
+
+
 
 
 
