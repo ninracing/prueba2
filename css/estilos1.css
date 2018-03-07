@@ -1,5 +1,6 @@
+/*ESTILOS GENERALES*/
 @import url('https://fonts.googleapis.com/css?family=Handlee|Satisfy');
-    
+
 *{
 	font-family: 'Handlee', cursive;
   text-align: center;
@@ -8,6 +9,14 @@
 body{
   margin: 0px;
 }
+
+section{
+  padding: 2em 0;
+  background-color: #f0f0f5;
+
+}
+
+/*Estilos zona de cabecera*/
 
 header	{
 	background:linear-gradient(to bottom right, white 10%, #f0f0f5 60%);
@@ -20,12 +29,6 @@ header h1{
   font-family: 'Satisfy', cursive;
 	font-size: 3rem;
 	text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
-}
-
-section{
-  padding: 2em 0;
-  background-color: #f0f0f5;
-
 }
 
 /*estilos para la zona de formulario*/
@@ -64,13 +67,15 @@ form fieldset{
   background-color: white;
 }
 
+.error{
+  color: #990000;
+}
 
 /*estilos para la zona de footer*/
 footer{
   background-image: url("../images/fondo-footer.jpg");
   padding-top: 3rem;
   padding-bottom: 2rem;
-
 }
 
 footer ul,p{

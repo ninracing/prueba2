@@ -7,6 +7,8 @@ window.onload=function(){
 	aceptacion.addEventListener("change",permitirEnvio,false);
 	var validacion=document.getElementById("boton-envio");
 	validacion.addEventListener("click",validar,false);
+	var calculos=document.getElementById("botonCalcular");
+	calculos.addEventListener("click",cantidadSuplementos,false);
 };
 
 // Activa el boton de submit o de envio
@@ -33,7 +35,7 @@ function validar(){
 	comprobarCopia();
 	comprobarSeleccion();
 	comprobarRespuesta();
-	cantidadSuplementos();	
+		
 	verificarTarjeta();
 };
 
